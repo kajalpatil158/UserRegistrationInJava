@@ -15,8 +15,20 @@ public class UserRegistration {
 		Matcher matcher = pattern.matcher(firstName);
 		boolean matches = matcher.find();
 		if (matches)
-			System.out.println("First Name Is Valid");
+			System.out.println("Its Valid First Name");
 		else
-			System.out.println("Please Enter A Valid First Name");
+			System.out.println("Its InValid First Name");
+		
+		// Checking validity of Last name
+				System.out.println("Enter Last Name-");
+				String lastName = scanner.next();
+				Pattern pattern_lastName = Pattern.compile("[A-Z]{1}[a-z]");
+				Matcher matcher_lastName = pattern.matcher(lastName);
+				boolean matches_lastName = matcher_lastName.find();
+				if (matches_lastName)
+					System.out.println("Its Valid Last Name");
+				else
+					System.out.println("Its InValid Last Name");
+
 	}
 }
