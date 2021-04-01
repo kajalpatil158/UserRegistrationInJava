@@ -44,7 +44,7 @@ public class UserRegistration {
 				
 				// Checking valid Mobile Number
 				System.out.println("Enter Mobile Number-");
-				String mobileNumber = scanner.next();
+				int mobileNumber = scanner.nextInt();
 				Pattern pattern_mobileNumber = Pattern.compile("[0-9]{2}[ ][0-9]{10}");
 				Matcher matcher_mobileNumber = pattern.matcher(lastName);
 				boolean matches_mobileNumber = matcher_mobileNumber.find();
@@ -52,6 +52,19 @@ public class UserRegistration {
 					System.out.println("Its Valid Mobile Number");
 				else
 					System.out.println("Its InValid Mobile Number");
-
+				
+				// Checking valid Password
+				System.out.println("Enter Password-");
+				String password = scanner.next();
+				Pattern pattern_password = Pattern.compile("^(?=.*[0-9])"
+	                       + "(?=.*[a-z])(?=.*[A-Z])"
+	                       + "(?=.*[@#$%^&+=])"
+	                       + "(?=\\S+$).{8,20}$");
+				Matcher matcher_password = pattern.matcher(password);
+				boolean matches_password = matcher_password.find();
+				if (matches_password)
+					System.out.println("Its Valid Password");
+				else
+					System.out.println("Its InValid Password");
 	}
 }
