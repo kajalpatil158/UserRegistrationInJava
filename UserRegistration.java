@@ -58,8 +58,9 @@ public class UserRegistration {
 				String password = scanner.next();
 				Pattern pattern_password = Pattern.compile(
 	                        "(?=.*[A-Z])"
-							+"(?=.*[a-z])"
-	                       +  "[0-9]{8,20}$");
+							+"(?=.*[0-9])"
+	                       +  "[!@#$%^&*()]{1}"
+	                       +"[a-z]{8,20}$");
 				Matcher matcher_password = pattern.matcher(password);
 				boolean matches_password = matcher_password.find();
 				if (matches_password)
